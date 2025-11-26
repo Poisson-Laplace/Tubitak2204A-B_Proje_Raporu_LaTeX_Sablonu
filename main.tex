@@ -1,0 +1,197 @@
+\documentclass[12pt]{article} % 12 punto ayarı
+
+% Dil ve Kodlama Ayarları
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[turkish]{babel} % Türkçe karakter ve heceleme desteği
+\usepackage{amsmath}
+
+% Font Ayarları
+\usepackage{mathptmx} % Times New Roman fontu için
+\usepackage{titlesec}
+\usepackage{url}
+
+\usepackage{enumitem} % Listelerin boşluklarını ayarlamak için
+
+
+% Başlık formatını ayarlar:
+% \normalsize = 12 punto (metinle aynı), \bfseries = Kalın yazı
+\titleformat{\section}{\normalfont\normalsize\bfseries}{}{0pt}{}
+
+% Başlıkların etrafındaki boşlukları ayarlar:
+% {Soldan girinti}{Üst boşluk}{Alt boşluk}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+
+
+% Sayfa Yapısı Ayarları
+% Her kenardan 2.5 cm boşluk
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+% Diğer Gerekli Paketler
+\usepackage{graphicx}
+\usepackage{xcolor} % Renkli metinler için
+\usepackage{array}  % Tablo düzeni için
+\usepackage{longtable} % Sayfa taşan tablolar için (gerekirse)
+\usepackage{float}
+
+% Satır Aralığı
+\linespread{1.0} % Tek satır aralığı
+
+
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Arduino Kodu İçin Renk Ayarları
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\let\oldbibliography\thebibliography
+\renewcommand{\thebibliography}[1]{%
+  \oldbibliography{#1}%
+  \setlength{\itemsep}{0pt}%    % Maddeler arası boşluğu sıfırlar
+  \setlength{\parskip}{0pt}%    % Paragraf boşluğunu sıfırlar
+}
+
+
+
+
+
+\begin{document}
+
+\noindent \textbf{Proje Ana Alanı :} Fizik \\[1em]
+\textbf{Proje Tematik Alanı :} \\[1em]
+\textbf{Proje Adı (Başlığı) : } Nötrino Bozunumunun SU2 uzayında Cart Curt Yapılması \\[2em]
+
+\section*{Özet}{12}
+Özet. Burası özet
+\textbf{Anahtar Kelimeler:} Kelime 1, Kelime 2
+
+\section*{Amaç}
+Burası Amaç. Evet burası gerçekten de amaç
+
+\section*{Giriş}
+Burası giriş. Değadasdasdqwesdasdsil mi Ali?
+
+\section*{Yöntem}
+
+\begin{equation}
+\frac{1+\sqrt{5}}{2}
+\end{equation}
+
+
+\begin{equation}
+   h=6.62607004\times 10^{-34}\tag{21}
+\end{equation}
+
+
+\section*{Proje İş-Zaman Çizelgesi}
+% (Mevcut çizelge kodu korundu)
+\begin{center}
+\renewcommand{\arraystretch}{1.5} % Tablo satır yüksekliği
+\begin{tabular}{|p{5cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{İşin Adı} & \multicolumn{10}{c|}{\textbf{AYLAR}} \\
+\hline
+ & \rotatebox{90}{NİSAN} & \rotatebox{90}{MAYIS} & \rotatebox{90}{HAZİRAN} & \rotatebox{90}{TEMMUZ} & \rotatebox{90}{AĞUSTOS} & \rotatebox{90}{EYLÜL} & \rotatebox{90}{EKİM} & \rotatebox{90}{KASIM} & \rotatebox{90}{ARALIK} & \rotatebox{90}{OCAK} \\
+\hline
+Literatür Taraması & X & X & & & & & & & & \\
+\hline
+Arazi/Deney Çalışması & & & X & X & X & & & & & \\
+\hline
+Verilerin Analizi & & & & & & X & X & & & \\
+\hline
+Proje Raporu Yazımı & & & & & & & & X & X & X \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Bulgular}
+Bunları şunları bulduk, değil mi Ali? Evet Recep gerçekten bunları şunları bulduk.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|p{4cm}|c|p{5cm}|}
+\hline
+\textbf{Deney no} & \textbf{Cart / Curt } & \textbf{Sensör} & \textbf{Sistem Tepkisi} \\
+\hline
+1 & Su (Referans) & Sensör 3 & Normal Akış (Cart şöyle, Curt şöyle) \\
+\hline
+2 & Biraz Daha Su & Sensör 3 & Normal Akış \\
+\hline
+3 & Daha Da Su & Sensör 2 & Tolerans Aralığı (Uyarı Yok) \\
+\hline
+4 & Çok Daha Su & Sensör 4 & Tolerans Aralığı (Uyarı Yok) \\
+\hline
+5 & Çok Çok Daha Su & \textbf{Sensör 1} & \textbf{ALARM} (Evet gerçekten de alarm) \\
+\hline
+6 & Bulanık / Çamurlu Su & \textbf{Sensör 5} & \textbf{ALARM} (Physicist be like Ion now oil industry just pays huge amount. Why not disgrace all my work and kill my future to drive nicer car) \\
+\hline
+\end{tabular}
+\vspace{-4pt}
+\caption{Did you know that this is a table}
+\end{table}
+
+Deney sonuçları, bubububububububububububububububububububububububububububububububububububu göre avantajını doğrulamaktadır.
+
+\section*{Sonuç ve Tartışma}
+
+
+
+\section*{Öneriler}
+
+
+
+
+
+% Kaynaklar Başlığını Ayarlıyoruz
+\renewcommand{\refname}{Kaynaklar} 
+
+% Stil Belirleme: 'plain' alfabetik sıralar ve numaralandırır [1], [2]
+\bibliographystyle{plain} 
+
+% .bib dosyasını çağırıyoruz (uzantısız olarak dosya adı)
+\bibliography{kaynaklar} 
+
+% DİKKAT: Metin içinde atıf yapmadığın kaynaklar listede çıkmaz.
+% Hepsini görmek istiyorsan geçici olarak şu komutu aç:
+\nocite{*}
+
+
+
+
+\section*{Ekler}
+\textbf{Ek 1: }
+Aşağıda, babbubbabubbabbubbabubbabbubbabubbabbubbabub yöneten algoritma verilmiştir.
+
+\begin{lstlisting}[language=C++, caption=Bu bir caption ve cpp dünyanın en iyi dili]
+#include <Servo.h>
+
+\end{lstlisting}
+
+\end{document}
